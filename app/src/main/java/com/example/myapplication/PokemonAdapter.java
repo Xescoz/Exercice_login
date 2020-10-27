@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHolder> {
@@ -64,7 +66,8 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
 
         holder.idTextView.setText(pokemon.getId());
         holder.nameTextView.setText(pokemon.getName());
-        holder.imageV.setImageResource(pokemon.getImage());
+        Glide.with(holder.imageV).load(pokemon.getImage()).into(holder.imageV);
+
     }
 
     // Returns the total count of items in the list

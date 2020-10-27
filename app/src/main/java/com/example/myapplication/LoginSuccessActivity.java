@@ -9,6 +9,8 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +25,12 @@ public class LoginSuccessActivity extends AppCompatActivity {
         RecyclerView rvPokemon = (RecyclerView) findViewById(R.id.pkm_list);
 
 
+
         pokemons = new ArrayList<Pokemon>();
-        pokemons.add(new Pokemon ("bulbizarre", "001", R.drawable.miniature_001));
-        pokemons.add(new Pokemon ("herbizarre", "002", R.drawable.miniature_002));
-        pokemons.add(new Pokemon ("florizarre", "003", R.drawable.miniature_003));
-        pokemons.add(new Pokemon ("salameche", "004", R.drawable.miniature_004));
+        pokemons.add(new Pokemon ("bulbizarre", "001", "https://www.pokepedia.fr/images/thumb/e/ef/Bulbizarre-RFVF.png/86px-Bulbizarre-RFVF.png"));
+        pokemons.add(new Pokemon ("herbizarre", "002", "https://www.pokepedia.fr/images/thumb/4/44/Herbizarre-RFVF.png/86px-Herbizarre-RFVF.png"));
+        pokemons.add(new Pokemon ("florizarre", "003", "https://www.pokepedia.fr/images/thumb/4/42/Florizarre-RFVF.png/103px-Florizarre-RFVF.png"));
+        pokemons.add(new Pokemon ("salameche", "004", "https://www.pokepedia.fr/images/thumb/8/89/Salam%C3%A8che-RFVF.png/71px-Salam%C3%A8che-RFVF.png"));
 
         PokemonAdapter adapter = new PokemonAdapter(pokemons, getApplicationContext());
         rvPokemon.setAdapter(adapter);

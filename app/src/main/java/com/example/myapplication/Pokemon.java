@@ -7,9 +7,9 @@ public class Pokemon {
 
     private String name;
     private String id;
-    private int image;
+    private String image;
 
-    public Pokemon(String name, String id, int image) {
+    public Pokemon(String name, String id, String image) {
         this.name = name;
         this.id = id;
         this.image = image;
@@ -23,7 +23,7 @@ public class Pokemon {
         this.id = id;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -34,7 +34,7 @@ public class Pokemon {
         return id;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 }
