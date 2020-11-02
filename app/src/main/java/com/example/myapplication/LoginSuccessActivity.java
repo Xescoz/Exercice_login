@@ -30,7 +30,7 @@ public class LoginSuccessActivity extends AppCompatActivity {
         pokemons.add(new Pokemon ("Florizarre", "003", "https://www.pokepedia.fr/images/thumb/4/42/Florizarre-RFVF.png/103px-Florizarre-RFVF.png", "https://www.pokepedia.fr/images/thumb/4/42/Florizarre-RFVF.png/773px-Florizarre-RFVF.png"));
         pokemons.add(new Pokemon ("Salamèche", "004", "https://www.pokepedia.fr/images/thumb/8/89/Salam%C3%A8che-RFVF.png/71px-Salam%C3%A8che-RFVF.png","https://www.pokepedia.fr/images/thumb/8/89/Salam%C3%A8che-RFVF.png/530px-Salam%C3%A8che-RFVF.png"));
 
-        PokemonAdapter adapter = new PokemonAdapter(pokemons, getApplicationContext());
+        PokemonAdapter adapter = new PokemonAdapter(pokemons, getApplicationContext(), this);
         rvPokemon.setAdapter(adapter);
         rvPokemon.setLayoutManager(new LinearLayoutManager(this));
 

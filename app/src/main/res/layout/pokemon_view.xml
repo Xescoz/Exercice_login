@@ -51,11 +51,10 @@
     <ImageButton
         android:id="@+id/remove"
         style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="25dp"
-        android:layout_height="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:text="@string/remove"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="@id/namePokemon"
         app:layout_constraintTop_toBottomOf="@id/namePokemon"
         android:src="@drawable/minus"/>

@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -51,24 +52,19 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
                     }catch (ArrayIndexOutOfBoundsException e){e.printStackTrace();}
                 }
             });
-            miniatureButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    Pokemon pokemon = pokemons.get(position);
-                    //Glide.with(pokemonZoom).load(pokemon.getImageZoom()).into(pokemonZoom);
-                }
-            });
+
         }
     }
 
     private List<Pokemon> pokemons;
     private Context context;
+    private Activity activity;
 
     // Pass in the contact array into the constructor
-    public PokemonAdapter(List<Pokemon> pokemons, Context context) {
+    public PokemonAdapter(List<Pokemon> pokemons, Context context, Activity activity) {
         this.pokemons = pokemons;
         this.context = context;
+        this.activity = activity;
     }
 
     @Override
@@ -91,6 +87,15 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
         holder.idTextView.setText(pokemon.getId());
         holder.nameTextView.setText(pokemon.getName());
         Glide.with(holder.miniatureButton).load(pokemon.getMiniature()).into(holder.miniatureButton);
+
+        holder.miniatureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, PokemonZoomActivity.class);
+                intent.putExtra("ImageZoom",pokemon.getImageZoom());
+                activity.startActivity(intent);
+            }
+        });
 
     }
 

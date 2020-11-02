@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.bumptech.glide.Glide;
+
 public class PokemonZoomActivity extends AppCompatActivity {
 
     @Override
@@ -19,5 +21,8 @@ public class PokemonZoomActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        String imageZoom = getIntent().getExtras().getString("ImageZoom");
+        Glide.with(pokemonZoom).load(imageZoom).into(pokemonZoom);
     }
 }
