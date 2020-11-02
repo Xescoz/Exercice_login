@@ -9,4 +9,6 @@
     <string name="login_error">Login failed please try again</string>
     <string name="PokemonId">PokemonId</string>
     <string name="ImagePokemon">Image Pokemon</string>
+    <string name="remove">remove</string>
+    <string name="title_activity_main2">MainActivity</string>
 </resources>

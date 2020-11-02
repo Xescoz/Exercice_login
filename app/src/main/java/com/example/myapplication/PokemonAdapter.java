@@ -1,13 +1,14 @@
 package com.example.myapplication;
 
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -22,8 +23,10 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
         public TextView nameTextView;
-        public ImageView imageV;
+        public ImageButton miniatureButton;
         public TextView idTextView;
+        public ImageButton removeButton;
+        public ImageButton pokemonZoom;
 
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each subview
@@ -34,7 +37,28 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
 
             nameTextView = (TextView) itemView.findViewById(R.id.namePokemon);
             idTextView = (TextView) itemView.findViewById(R.id.pokemonId);
-            imageV = (ImageView) itemView.findViewById(R.id.image);
+            miniatureButton = (ImageButton) itemView.findViewById(R.id.miniaturePokemon);
+            removeButton = (ImageButton) itemView.findViewById(R.id.remove);
+            pokemonZoom = (ImageButton)  itemView.findViewById(R.id.pokemonZoom);
+
+            removeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    try {
+                        pokemons.remove(position);
+                        notifyItemRemoved(position);
+                    }catch (ArrayIndexOutOfBoundsException e){e.printStackTrace();}
+                }
+            });
+            miniatureButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    Pokemon pokemon = pokemons.get(position);
+                    //Glide.with(pokemonZoom).load(pokemon.getImageZoom()).into(pokemonZoom);
+                }
+            });
         }
     }
 
@@ -66,7 +90,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
 
         holder.idTextView.setText(pokemon.getId());
         holder.nameTextView.setText(pokemon.getName());
-        Glide.with(holder.imageV).load(pokemon.getImage()).into(holder.imageV);
+        Glide.with(holder.miniatureButton).load(pokemon.getMiniature()).into(holder.miniatureButton);
 
     }
 

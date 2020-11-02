@@ -17,11 +17,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pkm_list"
+        app:layout_constraintTop_toBottomOf="@+id/pokemon_list"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/pkm_list"
+        android:id="@+id/pokemon_list"
         android:layout_width="413dp"
         android:layout_height="689dp"
         app:layout_constraintEnd_toEndOf="parent"

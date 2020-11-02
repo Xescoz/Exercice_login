@@ -1,18 +1,18 @@
 package com.example.myapplication;
 
 
-import android.graphics.Bitmap;
-
 public class Pokemon {
 
     private String name;
     private String id;
-    private String image;
+    private String miniature;
+    private String imageZoom;
 
-    public Pokemon(String name, String id, String image) {
+    public Pokemon(String name, String id, String miniature, String imageZoom) {
         this.name = name;
         this.id = id;
-        this.image = image;
+        this.miniature = miniature;
+        this.imageZoom = imageZoom;
     }
 
     public void setName(String name) {
@@ -23,8 +23,12 @@ public class Pokemon {
         this.id = id;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setMiniature(String miniature) {
+        this.miniature = miniature;
+    }
+
+    public void setImageZoom(String imageZoom) {
+        this.imageZoom = imageZoom;
     }
 
     public String getName() {
@@ -34,7 +38,13 @@ public class Pokemon {
         return id;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageZoom() {
+        return imageZoom;
+    }
+
+    public String getMiniature() {
+        return miniature;
     }
 }
+
+

@@ -32,12 +32,13 @@
         android:layout_marginTop="12dp"
         android:layout_weight="1"
         android:text="@string/PokemonId"
-        app:layout_constraintEnd_toStartOf="@id/image"
+        app:layout_constraintEnd_toStartOf="@id/miniaturePokemon"
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/black"/>
 
-    <ImageView
-        android:id="@+id/image"
+    <ImageButton
+        android:id="@+id/miniaturePokemon"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_weight="1"
@@ -46,5 +47,17 @@
         tools:srcCompat="@tools:sample/avatars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/remove"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="25dp"
+        android:layout_height="15dp"
+        android:text="@string/remove"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="@id/namePokemon"
+        app:layout_constraintTop_toBottomOf="@id/namePokemon"
+        android:src="@drawable/minus"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
